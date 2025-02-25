@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Shop the limited edition sneakers with a durable rubber sole and modern design, perfect for everyday comfort and style.">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@100..900&display=swap" rel="stylesheet">
+
+    <!-- favicon -->
+    <link rel="icon" type="image/x-icon" href="./images/favicon-32x32.png">
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="./src/css/general.css">
+    <link rel="stylesheet" href="./src/css/header.css">
+    <link rel="stylesheet" href="./src/css/main.css">
+
+    <title>E-commerce Product page</title>
+</head>
+
+<body>
+
+    <!-- Header code -->
+    <header>
+        <h1 class="visually-hidden">Sneaker Company</h1>
+
+        <!-- Left Section -->
+        <div id="header-flex-left" class="header-flex-left">
+
+            <img src="./images/logo.svg" alt="Company Logo" id="logo" class="logo">
+            <nav>
+                <button type="button" id="toggle-nav-button" class="toggle-nav-button" aria-label="Toggle the navigation menu">
+                    <img src="./images/icon-menu.svg" alt="Hamburger icon">
+                </button>
+                <div class="nav-links-container" id="nav-links-container">
+                    <button type="button" id="close-nav-button" class="close-nav-button" aria-label="Close navigation menu">
+                        <img src="./images/icon-close.svg" alt="Close navigation icon">
+                    </button>
+                    <ul>
+                        <li><a href="#">Colections</a></li>
+                        <li><a href="#">Men</a></li>
+                        <li><a href="#">Women</a></li>
+                        <li><a href="#">About</a></li>
+                        <li><a href="#">Contact</a></li>
+                    </ul>
+                </div>
+            </nav>
+
+        </div>
+
+        <div id="overlay" class="overlay"></div>
+
+        <!-- Rigth Section -->
+        <div id="header-flex-rigth" class="header-flex-rigth">
+
+            <button type="button" id="shopping-cart-button" class="shopping-cart-button" aria-label="Click to open and view the items in your shopping cart">
+                <span id="cart-total-items" class="cart-total-items" aria-label="The number of items in your cart.">0</span>
+                <img src="./images/icon-cart.svg" alt="Shopping cart">
+            </button>
+            <div id="cart-dropdown" class="cart-dropdown">
+                <div id="cart-dropdown-title" class="cart-dropdown-title">
+                    <h2 id="cart-title" class="cart-title">Cart</h2>
+                </div>
+                <p id="cart-content-status" class="cart-content-status">Your cart is empty</p>
+                <div id="cart-dropdown-content" class="cart-dropdown-content">
+                    <div id="cart-item-container" class="cart-item-container">
+                        <img id="product-picture" class="product-picture" src="./images/image-product-1-thumbnail.jpg" alt="Your chosen product">
+                        <div id="product-info-container" class="product-info-container">
+                            <p id="product-name" class="product-name">Fall Limited Edition Sneakers</p>
+                            <div id="price-container" class="price-container">
+                                <p id="product-total-price" class="product-total-price"></p>
+                                <span id="total-price" class="total-price"></span>
+                            </div>
+                        </div>
+                        <button type="button" id="discard-button" class="discard-button" aria-label="Click to discard a product">
+                            <img src="./images/icon-delete.svg" alt="trash-can">
+                        </button>
+                    </div>
+                    <button type="button" id="checkout-button" class="checkout-button" aria-label="Click to proceed to purchase">Checkout</button>
+                </div>
+            </div>
+            <img src="./images/image-avatar.png" alt="Your avatar" id="avatar" class="avatar">
+
+        </div>
+    </header>
+
+    <!-- Main code -->
+    <main>
+        <article id="main-product-section" class="main-product-section">
+
+            <!-- images and lightbox section -->
+            <div id="product-images-container" class="product-images-container">
+                <div id="main-image-container" class="main-image-container">
+                    <img src="./images/image-product-1.jpg" alt="White and beige sneakers with an orange accent, displayed against an orange background."class="desktop-main-image" id="desktop-main-image">
+                    <button type="button" id="prev-button-mobile" class="nav-button prev-button" aria-label="Previous image">
+                        <img src="./images/icon-previous.svg" alt="Previous">
+                    </button>
+                    <button type="button" id="next-button-mobile" class="nav-button next-button" aria-label="Next image">
+                        <img src="./images/icon-next.svg" alt="Next">
+                    </button>
+                </div>
+                <div id="thumbnails-container" class="thumbnails-container">
+                    <img src="./images/image-product-1-thumbnail.jpg" alt="Thumbnail of white and beige sneakers with an orange accent, displayed against an orange background." class="desktop-thumbnail active">
+                    <img src="./images/image-product-2-thumbnail.jpg" alt="Thumbnail of white sneakers stacked on smooth stones, with an orange backdrop." class="desktop-thumbnail">
+                    <img src="./images/image-product-3-thumbnail.jpg" alt="Thumbnail of white and beige sneakers, focusing on the side profile, with a warm orange background." class="desktop-thumbnail">
+                    <img src="./images/image-product-4-thumbnail.jpg" alt="Thumbnail of a pair of white sneakers placed on stones, highlighting the sole and design details." class="desktop-thumbnail">
+                </div>
+                <div id="lightbox" class="lightbox">
+                    <div id="lightbox-content" class="lightbox-content">
+                         <button type="button" id="close-lightbox-button" class="close-lightbox-button" aria-label="Close lightbox">
+                            <svg xmlns="http://www.w3.org/2000/svg">
+                               <path d="m11.596.782 2.122 2.122L9.12 7.499l4.597 4.597-2.122 2.122L7 9.62l-4.595 4.597-2.122-2.122L4.878 7.5.282 2.904 2.404.782l4.595 4.596L11.596.782Z" fill-rule="evenodd"/>
+                           </svg>
+                        </button>
+                        <img id="lightbox-main-image" class="lightbox-main-image" src="./images/image-product-1.jpg" alt="White and beige sneakers with an orange accent, displayed against an orange background.">
+                         <button type="button" id="prev-button-lightbox" class="nav-button prev-button" aria-label="Previous image">
+                            <img src="./images/icon-previous.svg" alt="Previous">
+                        </button>
+                        <button type="button" id="next-button-lightbox" class="nav-button next-button" aria-label="Next image">
+                            <img src="./images/icon-next.svg" alt="Next">
+                        </button>
+                        <div class="lightbox-thumbnails">
+                            <img src="./images/image-product-1-thumbnail.jpg" alt="Thumbnail of white and beige sneakers with an orange accent, displayed against an orange background." class="lightbox-thumbnail active">
+                            <img src="./images/image-product-2-thumbnail.jpg" alt="Thumbnail of white sneakers stacked on smooth stones, with an orange backdrop." class="lightbox-thumbnail">
+                            <img src="./images/image-product-3-thumbnail.jpg" alt="Thumbnail of white and beige sneakers, focusing on the side profile, with a warm orange background." class="lightbox-thumbnail">
+                            <img src="./images/image-product-4-thumbnail.jpg" alt="Thumbnail of a pair of white sneakers placed on stones, highlighting the sole and design details." class="lightbox-thumbnail">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- description and price section -->
+            <div id="main-product-info-container" class="main-product-info-container">
+                <div id="main-product-description-container" class="main-product-description-container">
+                    <p>Sneaker Company</p>
+                    <h2>Fall Limited Edition Sneakers</h2>
+                    <p>
+                        These low-profile sneakers are your perfect casual wear companion. Featuring a
+                        durable rubber outer sole, they’ll withstand everything the weather can offer.
+                    </p>
+                </div>
+                <div id="main-product-price-container" class="main-product-price-container">
+                    <span id="price-tag" class="price-tag" aria-label="Current discounted price: $125.00">
+                        $125.00 <span aria-hidden="true">50%</span>
+                    </span>
+                    <span class="old-price" aria-label="Original price before discount.">
+                        <del>$250.00</del>
+                    </span>
+                </div>
+                <div id="add-to-cart" class="add-to-cart">
+                    <div id="main-product-quantity-container" class="main-product-quantity-container">
+                        <button type="button" id="decrease-item-count-button" class="decrease-item-count-button" aria-label="Click to decrease your item count for purchase.">
+                            <img src="./images/icon-minus.svg" alt="Minus sign">
+                        </button>
+                        <span id="item-count" class="item-count" aria-label="How many items you are purchasing.">0</span>
+                        <button type="button" id="increase-item-count-button" class="increase-item-count-button" aria-label="Click to increase your item count for purchase.">
+                            <img src="./images/icon-plus.svg" alt="Plus sign">
+                        </button>
+                    </div>
+                    <button type="button" id="add-to-cart-button" class="add-to-cart-button">
+                        <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                            <path d="M20.925 3.641H3.863L3.61.816A.896.896 0 0 0 2.717 0H.897a.896.896 0 1 0 0 1.792h1l1.031 11.483c.073.828.52 1.726 1.291 2.336C2.83 17.385 4.099 20 6.359 20c1.875 0 3.197-1.87 2.554-3.642h4.905c-.642 1.77.677 3.642 2.555 3.642a2.72 2.72 0 0 0 2.717-2.717 2.72 2.72 0 0 0-2.717-2.717H6.365c-.681 0-1.274-.41-1.53-1.009l14.321-.842a.896.896 0 0 0 .817-.677l1.821-7.283a.897.897 0 0 0-.87-1.114ZM6.358 18.208a.926.926 0 0 1 0-1.85.926.926 0 0 1 0 1.85Zm10.015 0a.926.926 0 0 1 0-1.85.926.926 0 0 1 0 1.85Zm2.021-7.243-13.8.81-.57-6.341h15.753l-1.383 5.53Z" fill-rule="nonzero"/>
+                        </svg>
+                        Add to cart
+                    </button>
+                </div>
+            </div>
+
+        </article>
+    </main>
+    <script src="./src/js/nav-toggler.js"></script>
+    <script src="./src/js/cart.js"></script>
+    <script src="./src/js/images.js"></script>
+</body>
+</html>

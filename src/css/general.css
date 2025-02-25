@@ -1,0 +1,126 @@
+@charset "UTF-8";
+
+:root
+{
+    --orange: #FF7D1A;
+    --pale-orange: #FFEDE0;
+    --very-dark-blue: #1D2025;
+    --dark-grayish-blue: #68707D;
+    --grayish-blue: #B6BCC8;
+    --light-grayish-blue: #F7F8FD;
+    --white: #FFFFFF;
+    --black: #000000;
+
+    --orange-button-hover-color: #FF892F;
+    --orange-button-active-color: #FE9B50;
+    --orange-button-focus-color: #FF7003;
+
+    --transform-hover: translateY(0.2rem);
+    --transform-active: translateY(0.3rem);
+
+    --transitions: all ease-in-out 0.1s;
+
+    --max-size: 100%;
+
+    --small-font: clamp(1.4rem, 1.5rem + 4vw, 1.6rem);
+    --base-font: clamp(1.6rem, 1.8rem + 4vw, 2rem);
+    --medium-font: clamp(1.8rem, 2rem + 4vw, 2.2rem);
+
+    --normal-font: 400;
+    --heavy-font: 700;
+}
+
+*,
+*::before,
+*::after
+{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+a
+{
+    text-decoration: none;
+    color: inherit;
+}
+
+ul li
+{
+    list-style: none;
+}
+
+a, button
+{
+    cursor: pointer;
+}
+
+button
+{
+    border: none;
+    background: transparent;
+    transition: var(--transitions);
+}
+
+button:hover
+{
+    transform: var(--transform-hover);
+}
+
+button:active
+{
+    transform: var(--transform-active);
+}
+
+img
+{
+    width: var(--max-size);
+}
+
+.visually-hidden
+{
+    position: absolute;
+    left: -10000px;
+    top: auto;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+}
+
+html
+{
+    font-size: 52.5%;
+}
+
+body
+{
+    max-width: 90vw;
+    line-height: 1.5;
+    cursor: default;
+    font-size: var(--base-font);
+    font-family: "Kumbh Sans", serif;
+    font-weight: var(--normal-font);
+    padding: 2rem 0;
+    margin: 0 auto;
+}
+
+
+/*
+    body media-queries
+*/
+
+@media (min-width: 768px)
+{
+    html
+    {
+        font-size: 62.5%;
+    }
+}
+
+@media (min-width: 1100px)
+{
+    body
+    {
+        width: 120rem;
+    }
+}
