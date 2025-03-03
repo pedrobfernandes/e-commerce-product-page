@@ -26,7 +26,7 @@ document.addEventListener('DOMContentLoaded', () =>
     let currentIndex = 0;
 
 
-    // Takes car of updating the main image
+    // Takes care of updating the main image
     function updateMainImage(index)
     {
         const mainImage = document.querySelector('.main-image-container img');
@@ -62,75 +62,44 @@ document.addEventListener('DOMContentLoaded', () =>
         be the main image, activating the active class on it
         and removing it on the rest of them.
     */
-    lightboxThumbnails.forEach((thumbnail, index) =>
+    function setMainImage(thumbnails, mainImage)
     {
-        thumbnail.addEventListener('click', () =>
-        {
-            currentIndex = index;
-            const newSrc = thumbnail.src.replace('-thumbnail', '');
-            lightboxMainImage.src = newSrc;
 
-            lightboxThumbnails.forEach(t => t.classList.remove('active'));
-            thumbnail.classList.add('active');
+        thumbnails.forEach((thumbnail, index) =>
+        {
+            thumbnail.addEventListener('click', () =>
+            {
+                currentIndex = index;
+                const newSrc = thumbnail.src.replace('-thumbnail', '');
+                mainImage.src = newSrc;
+
+                thumbnails.forEach(thumb => thumb.classList.remove('active'));
+                thumbnail.classList.add('active');
+            });
         });
-    });
+    }
 
 
     /*
-        Same as above except is  for the desktop view
-        image switch
-    */
-    desktopThumbnails.forEach((thumbnail, index) =>
-    {
-        thumbnail.addEventListener('click', () =>
-        {
-            currentIndex = index;
-            const newSrc = thumbnail.src.replace('-thumbnail', '');
-            deskopMainImage.src = newSrc;
-
-            desktopThumbnails.forEach(t => t.classList.remove('active'));
-            thumbnail.classList.add('active');
-        });
-    });
-
-    /*
-        These ones take care of the next-image and previous-image
+        These one take care of the next-image and previous-image
         buttons, to handle next image and previous image navigation
         both on mobile view and desktop view with lightbox
     */
 
-    // Mobile buttons
-    document.getElementById('prev-button-mobile')
-        .addEventListener('click', () =>
+    function navigateTrougthImageButtons(previousId, nextId)
     {
-        currentIndex = (currentIndex > 0) ? currentIndex - 1 : images.length - 1;
-        updateMainImage(currentIndex);
-    });
+        document.getElementById(previousId).addEventListener('click', () =>
+        {
+            currentIndex = (currentIndex > 0) ? currentIndex - 1 : images.length - 1;
+            updateMainImage(currentIndex);
+        });
 
-
-    document.getElementById('next-button-mobile')
-        .addEventListener('click', () =>
-    {
-        currentIndex = (currentIndex < images.length - 1) ? currentIndex + 1 : 0;
-        updateMainImage(currentIndex);
-    });
-
-
-    // Lightbox buttons
-    document.getElementById('prev-button-lightbox')
-        .addEventListener('click', () =>
-    {
-        currentIndex = (currentIndex > 0) ? currentIndex - 1 : images.length - 1;
-        updateMainImage(currentIndex);
-    });
-
-
-    document.getElementById('next-button-lightbox')
-        .addEventListener('click', () =>
-    {
-        currentIndex = (currentIndex < images.length - 1) ? currentIndex + 1 : 0;
-        updateMainImage(currentIndex);
-    });
+        document.getElementById(nextId).addEventListener('click', () =>
+        {
+            currentIndex = (currentIndex < images.length - 1) ? currentIndex + 1 : 0;
+            updateMainImage(currentIndex);
+        });
+    }
 
 
     /*
@@ -163,4 +132,10 @@ document.addEventListener('DOMContentLoaded', () =>
             lightbox.classList.remove('show');
         }
     });
+
+    setMainImage(lightboxThumbnails, lightboxMainImage);
+    setMainImage(desktopThumbnails, deskopMainImage);
+
+    navigateTrougthImageButtons('prev-button-mobile', 'next-button-mobile');
+    navigateTrougthImageButtons('prev-button-lightbox', 'next-button-lightbox');
 });

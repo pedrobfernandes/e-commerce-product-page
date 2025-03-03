@@ -7,12 +7,12 @@ document.addEventListener('DOMContentLoaded', () =>
     const cartDropDown = document.getElementById('cart-dropdown');
     const cartDropdownContent = document.getElementById('cart-dropdown-content');
     const cartContentStatus = document.getElementById('cart-content-status');
-    const decreaseItemcountButton = document.getElementById('decrease-item-count-button');
+    const decreaseItemCountButton = document.getElementById('decrease-item-count-button');
     const increaseItemCountButton = document.getElementById('increase-item-count-button');
     const itemCount = document.getElementById('item-count');
     const productTotalPrice = document.getElementById('product-total-price');
     const totalPrice = document.getElementById('total-price');
-    const addTocartButton = document.getElementById('add-to-cart-button');
+    const addToCartButton = document.getElementById('add-to-cart-button');
     const discardButton = document.getElementById('discard-button');
 
     const itemPrice = 125.00;
@@ -42,7 +42,7 @@ document.addEventListener('DOMContentLoaded', () =>
         itemCount.textContent = items;
     });
 
-    decreaseItemcountButton.addEventListener('click', () =>
+    decreaseItemCountButton.addEventListener('click', () =>
     {
         if (items > 0)
         {
@@ -53,7 +53,7 @@ document.addEventListener('DOMContentLoaded', () =>
 
 
     // Adds the item on cart
-    addTocartButton.addEventListener('click', () =>
+    addToCartButton.addEventListener('click', () =>
     {
         if (items === 0)
         {
