@@ -61,7 +61,6 @@ header
     box-shadow: 0.2rem 0.2rem 0.2rem rgba(0, 0, 0, 0.115);
     background: var(--white);
     z-index: 51;
-
 }
 
 .nav-links-container ul
@@ -71,23 +70,34 @@ header
 
 .nav-links-container ul li
 {
+    position: relative;
     margin-bottom: 3rem;
     font-weight: var(--heavy-font);
     font-size: var(--base-font);
     letter-spacing: 0.1rem;
-    transition: var(--transitions);
 }
 
-.nav-links-container ul li:hover
+.nav-links-container ul li::after
 {
-    transform: var(--transform-hover);
-    border-bottom: 0.3rem solid var(--orange-button-hover-color);
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom:  -1rem;
+    width: 0;
+    height: 0.2rem;
+    background-color: var(--orange-button-hover-color);
+    transition: width ease-in-out 0.3s;
 }
 
-.nav-links-container ul li:active
+.nav-links-container ul li:hover::after
 {
-    transform: var(--transform-active);
-    border-bottom: 0.3rem solid (--orange-button-active-color);
+    width: var(--max-size);
+}
+
+.nav-links-container ul li:active::after
+{
+    height: 0.5rem;
+    background-color: var(--orange-button-active-color);
 }
 
 .close-nav-button
